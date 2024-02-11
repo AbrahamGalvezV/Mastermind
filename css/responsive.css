@@ -1,0 +1,194 @@
+@media screen and (max-width:1200px){
+
+    .container {
+        width: 992px;
+    }
+
+    
+}
+
+@media screen and (max-width:992px){
+
+    .container {
+        width: 720px;
+    }
+
+    /* INDEX */
+
+    h1 {
+        font-size: 80px;
+    }
+
+    
+    /* ABOUT */
+
+    .about__back {
+        width: 600px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+    }
+
+    .section {
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+    
+    }
+
+    /* INDEX */
+
+    .main {
+        padding: 170px 15px  100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+    .btn_main {
+        background-color: rgb(7, 18, 25);
+        color: rgb(119, 183, 206); 
+    }
+    
+    .btn_main:hover {
+        background-color:  rgb(50, 106, 143);
+        color:  rgb(7, 18, 25);
+    }
+
+    /* ABOUT */
+
+    .about {
+        padding: 80px 15px  100px;
+
+    }
+
+    h2 {
+        padding: 10px 20px 55px;
+    }
+
+    .about__back {
+        width: 100%;
+        padding: 50px 30px;
+        height: 70%;
+    }
+
+    .about__back p {
+        font-size: 16px;
+    }
+
+    .about__btn {
+        padding: 10px 25px;
+        font-size: 35px;
+
+    }
+
+    /* LOGIN */
+
+    .login {
+        padding: 80px 15px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .login__form {
+        width: 100%;
+        margin: 150px auto 50px;
+    }
+
+    .login__form__name {
+        font-size: 40px;
+
+    }
+
+    .nameInsert {
+        margin: 20px auto 350px;
+
+    }
+
+
+    /* LEVELS  */
+
+    .levels {
+        padding: 80px 15px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .levels h2 {
+        padding: 10px 20px 112px;  
+    }
+
+    .levels__btns__levels {
+        margin: 0 0 200px;
+        gap: 45px;
+        
+    
+    }
+
+    .level_btn {
+        width: 400px;
+    }
+
+    .level-1, .level-2, .level-3 {
+        padding-top: 50px;
+    }
+
+    /* GAME */
+
+    .game {
+        justify-content: space-between;
+        margin-top: 80px;
+    }
+
+    .game__wrapper {
+        background: linear-gradient(0deg, rgba(56, 77, 127, 0) 0%, rgba(106, 99, 113, 0.667) 47%, rgba(244, 236, 249, 0) 100%);
+    }
+
+    .color {
+        margin: 0 10px;
+    }
+
+    .game__check__btn {
+        margin-top: 60px;
+    }
+
+
+
+}
+
+@media screen and (max-width:576px) {
+    
+
+     /* INDEX */
+
+     .main {
+        background: rgb(7, 18, 25) url(../img/rioPc.png) no-repeat top center / cover;
+    }
+
+
+    h1 {
+        font-size: 50px;
+    }
+
+
+    /* ABOUT */
+
+ 
+
+   
+
+
+
+
+
+}

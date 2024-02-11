@@ -1,0 +1,446 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+}
+
+.container {
+    margin: auto;
+    width: 1170px;
+    height: 90vh;
+    padding: 0 15px;
+}
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+.section {
+    height: 90vh;
+    width: 100%;
+    text-align: center;
+
+}
+
+/* INDEX */
+
+.main_bg {
+    background-color: rgb(7, 18, 25);
+}
+
+
+
+.main {
+    color: rgb(7, 18, 25); 
+    padding-top: 50px;
+    background: rgb(7, 18, 25) url(../img/rioPc.png) no-repeat top center / cover;
+}
+
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wrapper__btn {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.btn_main {
+    background-color: rgb(119, 183, 206);
+    color: rgb(7, 18, 25); 
+}
+
+.btn_main:hover {
+    background-color:  rgb(50, 106, 143);
+    color:  rgb(232, 127, 6);
+}  
+ 
+
+/* ABOUT */
+.about_bg {
+    background-color: #070e1c;
+}
+
+.about {
+    padding-top: 40px;
+    background: rgb(7, 18, 25) url(../img/LagoPc.png) no-repeat top center / cover;
+ 
+}
+
+h2 {
+    display: inline-block;
+    font-size: 40px;
+    background-color: rgba(137, 43, 226, 0.416);
+    height: 60px;
+    padding: 10px 20px 60px;
+}
+
+.about__back {
+    margin: 45px auto;
+    background-color: rgba(0, 0, 0, 0.217);
+    width: 650px;
+    padding: 60px 50px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.about__back::-webkit-scrollbar {
+    width: 12px;
+}
+  
+.about__back::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.217);
+}
+  
+.about__back::-webkit-scrollbar-thumb {
+    background-color: rgba(147, 93, 227, 0.82);
+    border-radius: 20px;
+}
+
+.about__back p {
+    font-size: 18px;
+}
+
+.about__btn {
+    padding: 10px 20px;
+    background-color:rgba(147, 93, 227, 0.82);
+    color:  rgb(7, 18, 25);
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.about__btn:hover {
+    background-color: rgb(7, 18, 25);
+    color:  rgb(146, 93, 227);
+}  
+
+/* LOGIN */
+
+.login_bg {
+    background-color: #070B14;
+}
+
+.login {
+    padding-top: 50px;
+    background: rgb(7, 18, 25) url(../img/pinosPc.png) no-repeat top center / cover;
+
+
+}
+
+.login h2 {
+    background-color: #2B3D70;
+    color: #ACBCEC;
+}
+
+.login__form {
+    margin: 100px auto;
+    width: 500px;
+}
+
+.login__form__name {
+    padding-top: 10px 20px 60px;
+    background-color: #151B30;
+    color: #ACBCEC;
+    font-size: 50px;
+}
+
+.nameInsert {
+    background-color: #2B3D70;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 400px;
+    margin: 20px 0 180px;
+    text-transform: uppercase;
+    color: #ACBCEC;
+}
+
+.login__form__btn {
+    background-color:#2B3D70;
+    color:  #ACBCEC;
+}
+
+.login__form__btn:hover {
+    background-color: #ACBCEC;
+    color:  #2B3D70;
+} 
+
+#startGameBtn {
+    display: none;
+    cursor: pointer;
+    background-color: #ACBCEC;
+    color:  #2B3D70;
+}
+
+/* LEVELS  */
+
+.level__text {
+    background-color: #26416dd6;
+    color:  rgb(182, 202, 250);
+}
+
+.level_bg {
+    background-color: #010302;
+}
+
+.levels {
+    padding-top: 100px;
+    background: url(../img/casetaPc.jpg) no-repeat top center / cover;
+}
+
+.levels__btns__levels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 70px 0;
+
+}
+
+.level_btn {
+    width: 200px;
+    background-color: #061125b7;
+    color: rgb(182, 202, 250);
+}
+
+.level_btn:hover {
+    color:  #061125;
+    background-color: rgb(182, 202, 250);
+}
+
+.levels__btns__controls {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.levels__btn__control{
+    color:  #061125;
+    background-color: #26416d;
+}
+
+.levels__btn__control:hover  {
+    color:  rgb(182, 202, 250);
+    background-color:#061125;
+}
+.level-active {
+    color:  rgb(182, 202, 250);
+    background-color:#061125;
+}
+
+/* LEVEL-1 */
+
+.level_1_bg {
+    background-color: #000C2D;
+}
+
+.level-1 {
+    padding-top: 25px;
+    background: url(../img/pajarosPc.png) no-repeat top center / cover;
+}
+
+.level-title {
+    background-color: #000C2D;
+    color: #dcd1e7;
+}
+
+
+
+/* GAME */
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.game__wrapper {
+    padding: 10px;
+    background: linear-gradient(0deg, rgba(7, 11, 20, 0) 0%, rgba(106, 99, 113, 0.24) 47%, rgba(244, 236, 249, 0) 100%);
+}
+
+.attempts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-choices, .results {
+    display: flex;
+}
+
+.attempt, .colors {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.colors {
+    height: 45px;
+    margin-top: 12px;
+    justify-content: center;
+    
+}
+
+.color-choice, .color {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #0d1c3298;
+    margin: 0 5px;
+    border: 2px solid #061125;
+
+}
+
+.color {
+    border: none;
+}
+
+.color:hover {
+    border: none;
+    width: 40px;
+    height: 40px;
+    transition: .3s;
+}
+
+
+.color1 {
+    background-color: #a45bdc;
+}
+
+.color2 {
+    background-color: #e352ed;
+}
+
+.color3 {
+    background-color: #df4d4d;
+}
+
+.color4 {
+    background-color: rgb(229, 136, 60);
+}
+
+.color5 {
+    background-color: rgb(240, 240, 80);
+}
+.color6 {
+    background-color: rgb(172, 234, 118);
+}
+
+.result {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #061125;
+    background-color: #0d1c326f;
+    margin: 0 5px;
+}
+
+.game__check__btn {
+    margin-top: 12px;
+    background-color:#F3EAF9;
+    color: #070b14;
+ 
+} 
+
+.game__check__btn:hover {
+    background-color:#070b14;
+    color:  #de7474;
+}
+
+/* LEVEL2 */
+
+.level-2 {
+    padding-top: 25px;
+    background: url(../img/india2Pc.jpg) no-repeat top center / cover;
+}
+
+.level_2_bg {
+    background-color: #00090E;
+}
+
+.level-2-title {
+    color: #a45bdc;
+    background: #112325;
+}
+
+.game__check__btn__2 {
+    color: #112325;
+    background-color: #a45bdc;
+}
+
+.game__check__btn__2:hover {
+    color: #a45bdc;
+    background-color: #112325;
+}
+
+/* LEVEL3 */
+
+.level-3 {
+    padding-top: 25px;
+    background: url(../img/indiaPc.jpg) no-repeat top center / cover;
+}
+
+.level_3_bg {
+background-color: #050505;
+}
+
+.level-3-title {
+    color: #CF5348;
+    background: #152b64e0;
+}
+
+.game__check__btn__3 {
+    color: #EE75B4;
+    background-color:#152b6497;
+}
+
+.game__check__btn__3:hover {
+    color: #CF5348;
+    background-color:#5C4593;
+}
+
+/* WIN LEVEL 1 */
+
+
+.win {
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: url(../img/indiaPc.jpg) no-repeat top center / cover;
+}
+
+
+
+.win_bg {
+    background-color: #050505;
+}
+
+
+.new__game {
+    color: #EE75B4;
+    background-color:#152b6497;
+}
+
+.new__game:hover {
+    color: #CF5348;
+    background-color:#5C4593;
+}
+
