@@ -178,12 +178,12 @@ $(document).ready(function() {
     function checkWin(array) {       
         let arrayStr = array.join();
         if(arrayStr === 'black-confirm,black-confirm,black-confirm,black-confirm'){
-            window.location.href = '../win.html'
+            window.location.href = './win.html'
         } else {
             attempts++;
             if (attempts >= 10) {
                 alert('UPS, TRY AGAIN')
-                window.location.href = '../index.html'
+                window.location.href = './index.html'
             }
         }
 
