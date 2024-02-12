@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     let guess = 0;
-    let attempts = 0
+    let attempts = 0;
     let selectedColor = '';
     $('.game__check__btn').prop("disabled", true).css('cursor', 'not-allowed');
     let clickCount = 0;
@@ -71,12 +71,10 @@ $(document).ready(function() {
     $('.color-choice').click(function() {
         if (isSelected) {
 
-        
             if ($(this).hasClass('active')) {
                 $(this).css('background-color', selectedColor);
                 let coord =$(this).attr('id');                      
                 updateMasterArray(selectedColor, coord);
-
                 //El botón empieza a funcionar cuando todas las casillas tengan  color asignado
                 clickCount++;
                 if (clickCount === 4) {
@@ -85,28 +83,24 @@ $(document).ready(function() {
                 } 
             } 
         }
-        
-    
     });
 
+    // Selección de colores de forma aleatoria
     function makeAnswer() {
         let array = [];
         for(let i = 0; i < 4; i++) {
             array.push(Math.floor(Math.random() * 6)); 
         }
-
         return array; 
     }
   
     function updateMasterArray(col, xy) {
-
-
         let array = xy.split('-');
         let x = array[1];
         let y = array[2];
         
-        // console.log(array);                           // Refleja el código de color la posición
-    
+        // console.log(array);
+        // Refleja el código de color la posición
         masterGuessArray[x][y]= makeColorANumber(col);
         // console.log(masterGuessArray[0]);
     }
@@ -134,7 +128,6 @@ $(document).ready(function() {
                 aArray[i] = -1;
                 masterGuessArray[guess][i] = -2;
             }
-           
         } 
 
         //white confirmación/ compara si los colores de random coinciden con los colores seleccionados
@@ -156,6 +149,7 @@ $(document).ready(function() {
         return resulArray
     }
 
+    //pasar al segiente linia de resultados
     function getResultBox() {
         let activeResult = nextResult.getElementsByClassName("results")[0];
         nextResult = $(nextResult).prev()[0];
