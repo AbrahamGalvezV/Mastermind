@@ -1,27 +1,26 @@
-$(document).ready(function() {
-
     let guess = 0;
     let attempts = 0;
     let selectedColor = '';
-    $('.game__check__btn').prop("disabled", true).css('cursor', 'not-allowed');
+    document.querySelector('.game__check__btn').disabled = true;
+    document.querySelector('.game__check__btn').style.cursor = 'not-allowed';
     let clickCount = 0;
     let isSelected = false;
     let answerArray = makeAnswer()
-    let tempRay = $('.color-choices'); //array temporal 
+    let tempRay = Array.from(document.querySelectorAll('.color-choices'));
     let guessBoxArray = [];
-    let nextResult = $($('.first-results')[0]).parent()[0];
+    let nextResult = document.querySelectorAll('.first-results')[0].parentNode;
+
     for(let i = 9; i >= 0; i--) {
         guessBoxArray.push(tempRay[i]);    
     }
 
     // Añadimos un id a cada casilla
-    for(let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
         let guessArray = guessBoxArray[i].getElementsByClassName("color-choice");
-        for(let j = 0; j < 4; j++) {
-            $(guessArray[j]).attr('id', `g-${i}-${j}`);      
+        for (let j = 0; j < 4; j++) {
+            guessArray[j].setAttribute('id', `g-${i}-${j}`);
         }
-    } 
-
+    }
     //Se dividen las casillas en bloques de 4 X 10
     let masterGuessArray = [[-1, -1, -1, -1],
                             [-1, -1, -1, -1],
@@ -35,54 +34,58 @@ $(document).ready(function() {
                             [-1, -1, -1, -1]];
 
     //Función para que el botón check sube de línea
-    $('.game__check__btn').click(function() {
-        $('.active').removeClass('active');
-
-        // console.log(masterGuessArray[guess]);     //Muestra el resultade la seleccion de cplores del usuario
-        // console.log(answerArray);                 //Muestrala aretorio de random
-
+    document.querySelector('.game__check__btn').addEventListener('click', function() {
+        document.querySelector('.active').classList.remove('active');
+    
         let resultArray = getResult();
         checkWin(resultArray);
         let resultBox = getResultBox();
         placePegs(resultArray, resultBox);
-        guess++
-        for(let i = 0; i < 4; i++) {
-            $(`#g-${guess}-${i}`).addClass('active');  
+        guess++;
+        for (let i = 0; i < 4; i++) {
+            document.getElementById(`g-${guess}-${i}`).classList.add('active');
         }
-
-        $('.game__check__btn').prop("disabled", true).css('cursor', 'not-allowed');
-
+    
+        document.querySelector('.game__check__btn').disabled = true;
+        document.querySelector('.game__check__btn').style.cursor = 'not-allowed';
     });
 
     // Selección de color
-    $('.color').click(function () {
-        isSelected = true;
-        $('.color').css('width', '35px').css('height', '35px')
-        let peg = ($(this))[0];
-        selectedColor = $(this).css('background-color');
-        
-        // switch
-        $(peg).css('width', '40px');
-        $(peg).css('height', '40px');
-        
+    document.querySelectorAll('.color').forEach(function(element) {
+        element.addEventListener('click', function() {
+            isSelected = true;
+            document.querySelectorAll('.color').forEach(function(colorElem) {
+                colorElem.style.width = '35px';
+                colorElem.style.height = '35px';
+            });
+            let peg = this;
+            selectedColor = window.getComputedStyle(this).getPropertyValue('background-color');
+    
+            // Changing the size of color boxes using CSS
+            peg.style.width = '40px';
+            peg.style.height = '40px';
+        });
     });
 
     // Pasamos color seleccionado a color-choice
-    $('.color-choice').click(function() {
-        if (isSelected) {
-
-            if ($(this).hasClass('active')) {
-                $(this).css('background-color', selectedColor);
-                let coord =$(this).attr('id');                      
-                updateMasterArray(selectedColor, coord);
-                //El botón empieza a funcionar cuando todas las casillas tengan  color asignado
-                clickCount++;
-                if (clickCount === 4) {
-                    $('.game__check__btn').prop("disabled", false).css('cursor', 'pointer');
-                    clickCount = 0;
-                } 
-            } 
-        }
+    document.querySelectorAll('.color-choice').forEach(function(element) {
+        element.addEventListener('click', function() {
+            if (isSelected) {
+                if (this.classList.contains('active')) {
+                    this.style.backgroundColor = selectedColor;
+                    let coord = this.getAttribute('id');
+                    updateMasterArray(selectedColor, coord);
+    
+                    // The button starts working when all boxes have a color assigned
+                    clickCount++;
+                    if (clickCount === 4) {
+                        document.querySelector('.game__check__btn').disabled = false;
+                        document.querySelector('.game__check__btn').style.cursor = 'pointer';
+                        clickCount = 0;
+                    }
+                }
+            }
+        });
     });
 
     // Selección de colores de forma aleatoria
@@ -98,11 +101,9 @@ $(document).ready(function() {
         let array = xy.split('-');
         let x = array[1];
         let y = array[2];
-        
-        // console.log(array);
+
         // Refleja el código de color la posición
         masterGuessArray[x][y]= makeColorANumber(col);
-        // console.log(masterGuessArray[0]);
     }
 
     function makeColorANumber(col) {
@@ -131,7 +132,6 @@ $(document).ready(function() {
         } 
 
         //white confirmación/ compara si los colores de random coinciden con los colores seleccionados
-        
         for(let i = 0; i < 4; i++) {
             for(let j = 0; j < 4; j++) {
                 if(masterGuessArray[guess][i]=== aArray[j]) {
@@ -141,32 +141,34 @@ $(document).ready(function() {
                 }
             }
         }
-
-        // console.log(aArray);
-        // console.log(masterGuessArray[guess]);
-        // console.log(resultArray);
-
         return resulArray
     }
 
     //pasar al segiente linia de resultados
     function getResultBox() {
         let activeResult = nextResult.getElementsByClassName("results")[0];
-        nextResult = $(nextResult).prev()[0];
+        nextResult = nextResult.previousElementSibling;
         return activeResult;
     }
 
     function placePegs(array, box) {
         let pegArray = box.getElementsByClassName("result");
-
-        // console.log(pegArray); 
-
-        for(let i = 0; i < array.length; i++) {
-            $(pegArray[i]).addClass(`${array[i]}`);
+    
+        for (let i = 0; i < array.length; i++) {
+            pegArray[i].classList.add(array[i]);
         }
-
-        $('.white-confirm').css('background', 'none').css('background-color', 'white');
-        $('.black-confirm').css('background', 'none').css('background-color', 'black');
+    
+        let whiteConfirmEls = box.getElementsByClassName('white-confirm');
+        Array.from(whiteConfirmEls).forEach(function(el) {
+            el.style.background = 'none';
+            el.style.backgroundColor = 'white';
+        });
+    
+        let blackConfirmEls = box.getElementsByClassName('black-confirm');
+        Array.from(blackConfirmEls).forEach(function(el) {
+            el.style.background = 'none';
+            el.style.backgroundColor = 'black';
+        });
     }
 
     function checkWin(array) {       
@@ -183,4 +185,3 @@ $(document).ready(function() {
 
     };   
 
-});

@@ -11,6 +11,8 @@ Este proyecto ha sido creado con el uso de:
 
 Esta aplicación esta MPA con el objetivo de ser consumible por múltiples plataformas.
 
+![](./img/movil.png)
+
 Este proyecto cuenta con una pantalla principal en la que se podrá acceder tanto a las instrucciones como a la página de registro mediante un botones.
 
 ![](./img/home.png)
@@ -27,8 +29,6 @@ Selección del nivel de dificultad
 
 El juego consiste en acertar la combinación generada de forma aleatoria mediante JavaScript, para ello es necesario rellenar fila a fila con los seis colores establecidos.
 
-![](./img/comandos.png)
-
 Los distintos niveles del juego muestran empezando desde abajo un botón "check" que se usará para realizar la comprobación. Al presionar el botón también se sube automáticamente a la fila de arriba de la fila rellenada.
 
 El siguiente elemento que encontramos en la pantalla es una fila compuesta de seis colores diferentes, estos colores predeterminados son los que usaremos a continuación.
@@ -43,6 +43,4 @@ Este proyecto cuenta con las ilustraciones de: Chakkree_Chantakad
 https://pixabay.com/es/users/15107399/?tab=all&order=latest&pagi=1
 
 
-Mi intención es continuar desarrollando esta aplicación con el objetivo de ser subida a las distintas plataformas. Continuamos con su desarrollo
-
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/XIqCQx02E1U9W" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/XIqCQx02E1U9W"></a></p>
+Mi intención es continuar desarrollando esta aplicación con el objetivo de ser subida a las distintas plataformas. Continuamos con su desarrollo.
