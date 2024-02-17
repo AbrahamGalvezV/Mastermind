@@ -25,6 +25,10 @@ Selección del nivel de dificultad
 
 ![](./img/niveles.png)
 
+Cuando ganas te conduce a la pantalla wind en la que se encuentra un GIF junto a un texto y un botón que te conduce a la pantalla de levels
+
+![](./img/win.png)
+
 ## Instrucciones
 
 El juego consiste en acertar la combinación generada de forma aleatoria mediante JavaScript, para ello es necesario rellenar fila a fila con los seis colores establecidos.

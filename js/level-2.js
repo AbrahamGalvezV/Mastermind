@@ -155,13 +155,14 @@ function getResult() {
     return resulArray
 }
 
-//pasar al segiente linia de resultados
+//Pasar al segiente linia de resultados
 function getResultBox() {
     let activeResult = nextResult.getElementsByClassName("results")[0];
     nextResult = nextResult.previousElementSibling;
     return activeResult;
 }
-
+ 
+//Chivatos
 function placePegs(array, box) {
     let pegArray = box.getElementsByClassName("result");
 
@@ -169,28 +170,32 @@ function placePegs(array, box) {
         pegArray[i].classList.add(array[i]);
     }
 
+    // Indicador de colores coincidentes
     let whiteConfirmEls = box.getElementsByClassName('white-confirm');
     Array.from(whiteConfirmEls).forEach(function(el) {
         el.style.background = 'none';
         el.style.backgroundColor = 'white';
     });
 
+    // Combinación de colores es correcta y posición correcta
     let blackConfirmEls = box.getElementsByClassName('black-confirm');
     Array.from(blackConfirmEls).forEach(function(el) {
         el.style.background = 'none';
         el.style.backgroundColor = 'black';
     });
 }
-
+//Función que determina que la combinación de colores es correcta
 function checkWin(array) {       
     let arrayStr = array.join();
     if(arrayStr === 'black-confirm,black-confirm,black-confirm,black-confirm,black-confirm'){
         window.location.href = './win.html'
+
+        //Si no es correcta
     } else {
         attempts++;
         if (attempts >= 10) {
             alert('UPS, TRY AGAIN')
-            window.location.href = './index.html'
+            window.location.href = './levels.html'
         }
     }
 
